@@ -1,0 +1,19 @@
+<div class="max-h-screen max-w-screen">
+  <div class="sticky top-0 min-w-full h-full bg-backgroundDark z-50 px-2 md:p-0 ">
+    <you-SearchBar></you-SearchBar>
+    <you-TagsBar></you-TagsBar>
+  </div>
+
+  <!-- Body -->
+  <div class="grid grid-flow-row content-center place-items-center p-4">
+    <div class="gap-8 columns-2 md:columns-3 xl:columns-4 h-full w-full md:w-1/2 xl:w-1/2 ">
+      <div class=" mb-6" *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]">
+        <base-widget>
+          <div class="m-9">
+            <p class="text-white text-2xl font-bold">Base Widget test</p>
+          </div>
+        </base-widget>
+      </div>
+    </div>
+  </div>
+</div>

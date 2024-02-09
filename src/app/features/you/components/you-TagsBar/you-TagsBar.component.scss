@@ -1,0 +1,8 @@
+.tagsScrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tagsScrollbar::-webkit-scrollbar {
+  display: none;
+}
