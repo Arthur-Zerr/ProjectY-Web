@@ -1,18 +1,21 @@
-<div class="max-h-screen max-w-screen">
-  <div class="sticky top-0 min-w-full h-full bg-backgroundDark z-50 px-2 md:p-0 ">
-    <you-SearchBar></you-SearchBar>
-    <you-TagsBar></you-TagsBar>
+<div class="h-full max-w-screen">
+  <div class="sticky top-0 min-w-full h-full dark:white dark:bg-backgroundDark z-50">
+    <img class="h-12 w-12 drop-shadow-2xl" ngSrc="assets/icons/You.png" alt="You Logo" height="1024" width="1024">
+    <you-SearchBar class="absolute top-0 w-1/4 left-1/2 -translate-x-1/2"></you-SearchBar>
+    <you-TabBar></you-TabBar>
+    <!--    <you-TagsBar class="top-16 w-3/3"></you-TagsBar>-->
   </div>
 
   <!-- Body -->
   <div class="grid grid-flow-row content-center place-items-center p-4">
-    <div class="gap-8 columns-2 md:columns-3 xl:columns-4 h-full w-full md:w-1/2 xl:w-1/2 ">
-      <div class=" mb-6" *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]">
-        <base-widget>
-          <div class="m-9">
-            <p class="text-white text-2xl font-bold">Base Widget test</p>
-          </div>
-        </base-widget>
+    <div class="gap-8 columns-2 md:columns-2 xl:columns-2 h-full w-full md:w-1/2 xl:w-1/2 ">
+      <div *ngFor="let i of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]">
+        <div class=" mb-6 break-inside-avoid-column">
+          <y-text-contentComponent></y-text-contentComponent>
+        </div>
+        <div class=" mb-6 break-inside-avoid-column">
+          <y-picture-contentComponent></y-picture-contentComponent>
+        </div>
       </div>
     </div>
   </div>

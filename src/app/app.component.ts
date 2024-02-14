@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterOutlet } from "@angular/router";
-import { BaseWidgetComponent } from "./shared/components/base-widget/base-widget.component";
+import { BaseWidgetComponent } from "./shared/components/base/base-widget/base-widget.component";
 import { TabbarWidgetComponent } from "./shared/components/tabbar-Widget/tabbar-Widget.component";
 import { HttpClientModule } from "@angular/common/http";
 

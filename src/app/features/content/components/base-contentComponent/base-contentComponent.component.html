@@ -1,0 +1,27 @@
+<base-widget>
+  <div class="flex flex-col">
+    <div class="flex items-center " *ngIf="!this.hideHeader">
+      <div class="border-2 border-debugColor rounded-md w-10 h-10 z-0">
+        <img class="dark:invert" ngSrc="assets/icons/ProfilePicture.png" alt="profilePicture" width="1024"
+             height="1024">
+      </div>
+      <div class="text-black dark:text-white text-sm flex flex-col ml-2">
+        <p class="font-bold">Username</p>
+        <p class="text-xs">AtUsername</p>
+      </div>
+    </div>
+    <div class="p-1">
+      <ng-content></ng-content>
+    </div>
+    <div class="flow-root text-black dark:text-white">
+      <div class="float-left">
+        <p class="text-xs ">Location</p>
+      </div>
+      <div class="float-right flex gap-1">
+        <p class="text-xs ">1000 views</p>
+        <p class="text-xs ">Seconds</p>
+      </div>
+    </div>
+  </div>
+</base-widget>
+

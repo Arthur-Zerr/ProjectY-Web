@@ -5,6 +5,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "AmaticSC": ["AmaticSC"],
+        "IndieFlower": ["IndieFlower"],
+        "Kanya": ["Kanya"],
+        "PermanentMarker": ["PermanentMarker"]
+      },
       boxShadow: {
         "widget": "0px 0px 10px 1px rgba(0, 0, 0, 0.3)",
       },
@@ -18,7 +24,8 @@ module.exports = {
         "widgetShadowDark": "#0000004B",
         "widgetBorder": "#2d2d2d",
         "textDark": "#dedede",
-        "subtextDark": "#aaaaaa"
+        "subtextDark": "#aaaaaa",
+        "debugColor": "#0E294B"
       }
     },
   },

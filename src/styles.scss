@@ -2,7 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   @apply dark:bg-backgroundDark
+}
+
+@font-face {
+  font-family: 'AmaticSC';
+  src: url('./assets/fonts/AmaticSC.ttf');
+}
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url('./assets/fonts/IndieFlower.ttf');
+}
+
+@font-face {
+  font-family: 'Kanya';
+  src: url('./assets/fonts/Kanya.ttf');
+}
+
+@font-face {
+  font-family: 'PermanentMarker';
+  src: url('./assets/fonts/PermanentMarker.ttf');
 }
