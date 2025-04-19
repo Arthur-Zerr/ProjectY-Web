@@ -1,9 +1,34 @@
-<div class="fixed bottom-2 p-2 left-1/2 -translate-x-1/2 z-50">
-  <y-tabbar-Widget></y-tabbar-Widget>
+<!-- Body -->
+<div class="h-screen overflow-hidden z-0">
+  <div class="flex flex-row h-screen max-h-full">
+    <y-sidebar-Widget></y-sidebar-Widget>
+    <div class="mt-16 mr-2 mb-2 w-full">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
-<router-outlet></router-outlet>
 
-<!--&lt;!&ndash;Tabbars bar&ndash;&gt;-->
+<you-SearchBar class="fixed top-1 w-1/4 left-1/2 -translate-x-1/2"></you-SearchBar>
+<!--User popup -->
+<y-user-DropDownMenu></y-user-DropDownMenu>
+
+<div class="fixed top-0 left-0 bg-black bg-opacity-40 w-full h-full" *ngIf="this.showBlackOverlay"
+     (click)="this.closeAllViews()">
+</div>
+
+<div class="fixed top-0 left-0 m-32">
+  <y-text-contentView *ngIf="this.showTextView" (closeView)="this.closeAllViews()">
+  </y-text-contentView>
+  <y-video-contentView *ngIf="this.showVideoView"
+                       [appOutSideClick]="false" (outSideClick)="this.closeAllViews()">
+  </y-video-contentView>
+  <y-picture-contentView *ngIf="this.showPictureView"
+                         [appOutSideClick]="false" (outSideClick)="this.closeAllViews()">
+  </y-picture-contentView>
+</div>
+
+<!-- loading full screen image-->
+<y-loading-Page *ngIf="this.routeLoading"></y-loading-Page>
 <!--<div class="fixed bottom-0 left-1/2 -translate-x-1/2 translate p-2 z-50F">-->
 <!--  <y-tabbar-Widget></y-tabbar-Widget>-->
 <!--</div>-->

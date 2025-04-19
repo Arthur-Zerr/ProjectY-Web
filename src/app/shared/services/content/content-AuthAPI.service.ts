@@ -16,18 +16,14 @@ export class ContentAuthAPIService {
   constructor(private http: HttpClient) {
   }
 
-  async login(loginDto: ContentLoginDto): Promise<YResponse<ContentLoginReturnDto> | undefined> {
-    try {
-      const headers = new HttpHeaders();
-      headers.set("Y", this.y);
+  async login(loginDto: ContentLoginDto): Promise<YResponse<ContentLoginReturnDto>> {
+    const headers = new HttpHeaders();
+    headers.set("Y", this.y);
 
-      return await firstValueFrom(
-        this.http.post<YResponse<ContentLoginReturnDto>>(`${this.apiUrl}/y1/Auth/Login`, loginDto, {headers})
-      );
-    } catch (error) {
-      console.error(error);
-      return undefined;
-    }
+    return await firstValueFrom(
+      this.http.post<YResponse<ContentLoginReturnDto>>(`${this.apiUrl}/y1/Auth/Login`, loginDto, {headers})
+    );
+
   }
 
   async logout(): Promise<YResponse<undefined> | undefined> {

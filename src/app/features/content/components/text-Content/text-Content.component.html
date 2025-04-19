@@ -1,0 +1,13 @@
+<div class="select-none cursor-pointer rounded-2xl"
+     [ngClass]="{'bg-gradient-to-r from-cyan-500 to-blue-500' : this.showBackgroundBlur}"
+     [ngStyle]="{'box-shadow' : this.showBackgroundBlur ? 'inset 0 0 5em 2em #000' : ''}"
+     (mouseenter)="this.toggleBackgroundBlur()" (mouseleave)="this.toggleBackgroundBlur()">
+  <div class="p-1">
+    <div class="rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500">
+      <div class="text-black dark:text-white p-2">
+        <p>{{ this.content }}</p>
+      </div>
+    </div>
+  </div>
+  <y-content-UserInfo class="" *ngIf="!this.hideUserInfo"></y-content-UserInfo>
+</div>

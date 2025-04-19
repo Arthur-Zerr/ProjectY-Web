@@ -1,0 +1,26 @@
+<div class="flex justify-center">
+  <div class="grid grid-cols-2 2xl:w-1/2 h-1/2">
+    <div class="bg-debugGradient rounded-3xl w-fit h-fit mr-1">
+      <img class="rounded-t-2xl" [src]="this.imageSource" alt="picture content">
+      <!-- User stuff -->
+      <div class="p-2">
+        <div class="flex flex-row pt-2 justify-between">
+          <div class="flex items-center ">
+            <div class="border-2 border-debugColor rounded-md w-10 h-10 z-0">
+              <img class="dark:invert" ngSrc="assets/icons/ProfilePicture.png" alt="profilePicture" width="1024"
+                   height="1024">
+            </div>
+            <div class="text-black font-IndieFlower dark:text-white flex flex-col ml-2">
+              <p class="font-bold text-md">Username</p>
+              <p class="text-sm">Username</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 h-1/2">
+      <y-content-Description></y-content-Description>
+      <y-content-Comment-List></y-content-Comment-List>
+    </div>
+  </div>
+</div>

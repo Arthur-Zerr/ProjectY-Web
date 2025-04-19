@@ -9,16 +9,20 @@ import { YouSearchBarComponent } from "./components/you-SearchBar/you-SearchBar.
 import { YouTagsBarComponent } from "./components/you-TagsBar/you-TagsBar.component";
 import { ContentModule } from "../content/content.module";
 import { YouTabBarComponent } from "./components/you-TabBar/you-TabBar.component";
+import { ClickOutSideDirective } from "../../core/directives/clickOutSide.directive";
+import { FormsModule } from "@angular/forms";
 
 const routes: Routes = [
   {
-    path: "",
+    path: "you",
     component: YouComponent,
     // canActivate: [AuthGuard],
     children: [
-      {path: "you", component: YouFeedViewComponent},
+      {path: "", component: YouFeedViewComponent},
     ]
-  }
+  },
+  {path: "", redirectTo: "you", pathMatch: "full"}
+
 ];
 
 @NgModule({
@@ -29,6 +33,9 @@ const routes: Routes = [
     YouTagsBarComponent,
     YouTabBarComponent
   ],
+  exports: [
+    YouSearchBarComponent
+  ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
@@ -36,7 +43,9 @@ const routes: Routes = [
     BaseWidgetComponent,
     TabbarWidgetComponent,
     NgOptimizedImage,
-    ContentModule
+    ContentModule,
+    ClickOutSideDirective,
+    FormsModule
   ]
 })
 export class YouModule {

@@ -1,0 +1,30 @@
+<div
+  class="fixed top-1 right-1 flex flex-row items-center gap-2 cursor-pointer select-none hover:bg-white hover:bg-opacity-20 rounded-md p-1"
+  (click)="this.toggleDropDown()">
+  <p class="text-white font-bold text-2xl font-IndieFlower">Username</p>
+  <img ngSrc="./assets/temp/IMG_0749.jpeg" class="rounded-xl border w-12 h-12" alt="loading image" width="4032"
+       height="3024">
+</div>
+<div class="fixed top-16 right-1 z-50" *ngIf="this.isOpen"
+     [appOutSideClick]="false"
+     (outSideClick)="this.toggleDropDown()">
+  <div
+    class="font-normal backdrop-blur-3xl divide-y divide-gray-100 rounded-lg shadow w-44 dark:divide-gray-600">
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+      <li class="cursor-pointer select-none" (click)="this.redirectOnClick('profile')">
+        <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-white">Profile</a>
+      </li>
+      <li class="cursor-pointer select-none">
+        <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-white">Settings</a>
+      </li>
+      <li class="cursor-pointer select-none">
+        <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-white">Earnings</a>
+      </li>
+    </ul>
+    <div class="cursor-pointer select-none py-1">
+      <a
+        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+        out</a>
+    </div>
+  </div>
+</div>

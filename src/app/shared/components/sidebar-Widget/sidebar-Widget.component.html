@@ -1,0 +1,31 @@
+<div class="flex flex-row p-2 items-center gap-2 fixed cursor-pointer">
+  <img ngSrc="assets/icons/menu.svg" height="24" width="24" alt="menu" class="invert h-12 w-12"
+       (click)="this.toggleSidebar()">
+  <p class="text-white font-bold text-4xl font-AmaticSC" (click)="this.redirectOnClick('you')">Yellora</p>
+</div>
+<div class="mt-20 flex flex-col gap-8 p-2 ">
+  <div class="rounded-md gap-1 flex flex-row place-items-center cursor-pointer p-1 hover:bg-debugColor"
+       (click)="this.redirectOnClick('you')"
+       [ngClass]="this.getState('you') ? 'bg-debugColor' : ''">
+    <img ngSrc="assets/icons/You.png" width="1024" height="1024" alt="you icon" class="w-14 h-14  invert">
+    <p class="text-white font-IndieFlower text-lg select-none"
+       [@inOutAnimation]
+       *ngIf="this.isOpen">All you</p>
+  </div>
+  <div class="rounded-md gap-1 flex flex-row place-items-center cursor-pointer p-1 hover:bg-debugColor"
+       (click)="this.redirectOnClick('carousel')"
+       [ngClass]="this.getState('carousel') ? 'bg-debugColor' : ''">
+    <img ngSrc="assets/icons/smalls.png" width="1024" height="1024" alt="you icon" class="w-14 h-14 invert">
+    <p class="text-white font-IndieFlower text-lg select-none"
+       [@inOutAnimation]
+       *ngIf="this.isOpen">Carousel</p>
+  </div>
+  <div class="rounded-md gap-1 flex flex-row place-items-center cursor-pointer p-1 hover:bg-debugColor"
+       (click)="this.redirectOnClick('explore')"
+       [ngClass]="this.getState('explore') ? 'bg-debugColor' : ''">
+    <img ngSrc="assets/icons/explore.png" width="1024" height="1024" alt="you icon" class="w-14 h-14 invert">
+    <p class="text-white font-IndieFlower text-lg select-none"
+       [@inOutAnimation]
+       *ngIf="this.isOpen">Explore</p>
+  </div>
+</div>

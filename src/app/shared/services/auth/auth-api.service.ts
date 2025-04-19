@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { GuestLoginDto, LoginDto, LoginReturnDto } from "../../models/authAPI.model";
+import { GuestLoginDto, AuthLoginDto, AuthLoginReturnDto } from "../../models/authAPI.model";
 import { YResponse } from "../../models/yresponse.model";
 import { environment } from "../../../../environments/environment";
 
@@ -16,12 +16,12 @@ export class AuthApiService {
   constructor(private http: HttpClient) {
   }
 
-  async login(loginDto: LoginDto): Promise<YResponse<LoginReturnDto>> {
+  async login(loginDto: AuthLoginDto): Promise<YResponse<AuthLoginReturnDto>> {
     const headers = new HttpHeaders();
     headers.set("Y", this.y);
 
     return await firstValueFrom(
-      this.http.post<YResponse<LoginReturnDto>>(`${this.apiUrl}/y1/Auth/Login`, loginDto, {headers})
+      this.http.post<YResponse<AuthLoginReturnDto>>(`${this.apiUrl}/y1/Auth/Login`, loginDto, {headers})
     );
   }
 
@@ -43,12 +43,12 @@ export class AuthApiService {
     );
   }
 
-  async loginGuest(guestLoginDto: GuestLoginDto): Promise<YResponse<LoginReturnDto>> {
+  async loginGuest(guestLoginDto: GuestLoginDto): Promise<YResponse<AuthLoginReturnDto>> {
     const headers = new HttpHeaders();
     headers.set("Y", this.y);
 
     return await firstValueFrom(
-      this.http.post<YResponse<LoginReturnDto>>(`${this.apiUrl}/y1/GuestAuth/Login`, guestLoginDto, {headers})
+      this.http.post<YResponse<AuthLoginReturnDto>>(`${this.apiUrl}/y1/GuestAuth/Login`, guestLoginDto, {headers})
     );
   }
 

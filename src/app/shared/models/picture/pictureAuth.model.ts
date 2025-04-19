@@ -12,7 +12,7 @@ export class PictureLoginDto {
   }
 }
 
-export class LoginPictureReturnDto {
+export class PictureLoginReturnDto {
   public token: string;
   public yUser: PictureYUser;
   public expires: string;

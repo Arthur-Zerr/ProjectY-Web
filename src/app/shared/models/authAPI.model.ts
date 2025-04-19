@@ -39,7 +39,7 @@ export class DeviceInfoDto {
   }
 }
 
-export class LoginDto {
+export class AuthLoginDto {
   public Email: string;
   public Password: string;
   public DeviceInfo: DeviceInfoDto;
@@ -51,7 +51,7 @@ export class LoginDto {
   }
 }
 
-export class RegisterDto {
+export class AuthRegisterDto {
   public Username: string;
   public AtUsername: string;
   public Email: string;
@@ -79,7 +79,7 @@ export class GuestLoginDto {
   }
 }
 
-export class LoginReturnDto {
+export class AuthLoginReturnDto {
   public token: string;
   public yUser: YUser;
   public expires: string;

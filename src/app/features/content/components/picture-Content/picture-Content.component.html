@@ -1,0 +1,22 @@
+<!-- Content Body -->
+<a [routerLink]="['']" [queryParams]="{ picture: this.imageSource}">
+  <div
+    class="relative text-center w-full select-none rounded-2xl bg-cover"
+    [ngStyle]="{ 'background-image': this.showBackgroundBlur ?  'url(' + this.imageSource + ')' : '', 'box-shadow' : this.showBackgroundBlur ? 'inset 0 0 5em 2em #000' : ''}"
+    (mouseenter)="this.toggleBackgroundBlur()" (mouseleave)="this.toggleBackgroundBlur()">
+    <div class="rounded-2xl backdrop-blur-2xl">
+      <!--  <p-->
+      <img id="pictureContent" #pictureContent class="rounded-2xl p-1"
+           [src]="this.imageSource"
+           alt="picture content"
+           width="1024" height="1024">
+      <!--  <p-->
+      <!--    class="absolute bottom-0 font-IndieFlower text-md backdrop-blur-3xl p-0.5 rounded-md left-1/2 -translate-x-1/2"-->
+      <!--    [ngClass]="this.isTextDark ? 'text-white' : 'text-black'">-->
+      <!--    Spatiis mori in bi-color oenipons!Pol, peritus canis!-->
+      <!--  </p>-->
+      <y-content-UserInfo
+        *ngIf="!this.hideUserInfo"></y-content-UserInfo>
+    </div>
+  </div>
+</a>
